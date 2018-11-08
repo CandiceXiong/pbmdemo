@@ -20,7 +20,7 @@ public class InterfaceCustomer {
     )
     {
         ResultUtility resultUtilityn;
-        String open=customerService.findOpenid (openid);//查询opendid
+        Customer open=customerService.findOpenid (openid);//查询opendid
         if (open != null)
         {
             resultUtilityn=new ResultUtility (false,"你已经领取过了");

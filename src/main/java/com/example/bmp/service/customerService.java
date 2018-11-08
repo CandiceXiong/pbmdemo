@@ -23,7 +23,7 @@ public class customerService {
         return customerDao.findFirstByStatus (status);
     }
     //查询openid
-    public String findOpenid(String opneid)
+    public Customer findOpenid(String opneid)
     {
        return customerDao.findByOpenid (opneid);
     }

@@ -17,7 +17,7 @@ public interface customerDao extends JpaRepository<Customer,Long> {
     //查询第一条数据
     Customer findFirstByStatus(int status);
     //查询第一条数据
-    String findByOpenid(String openid);
+    Customer findByOpenid(String openid);
     //更新使用过的code为1，根据openid拿code
    @Transactional   //事物
    @Modifying(clearAutomatically = true)
