@@ -12,7 +12,8 @@ public class customerService {
     @Autowired
     private customerDao customerDao;
     //保存所以数据
-    public Customer saveCustomer(Customer customer)
+    public Customer saveCustomer
+      (Customer customer)
     {
         return customerDao.save (customer);
     }

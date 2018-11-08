@@ -6,17 +6,46 @@ public class ResultUtility {
 
     private boolean status;  //是否成功
     private String msg;        //返回提示的消息
-    private String data;      // 主要返回的数据
+    private String code;      // 主要返回的数据
 
+
+    public ResultUtility()
+    {
+
+    }
     public ResultUtility(boolean status, String msg) {
         this.status = status;
         this.msg = msg;
-    }
 
-    public ResultUtility(boolean status, String msg, String data) {
+    }
+    public ResultUtility(boolean status, String msg, String code) {
         this.status = status;
         this.msg = msg;
-        this.data =data;
+        this.code = code;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     @Override
@@ -24,7 +53,7 @@ public class ResultUtility {
         return "ResultUtility{" +
                 "status=" + status +
                 ", msg='" + msg + '\'' +
-                ", data='" + data + '\'' +
+                ", code='" + code + '\'' +
                 '}';
     }
 }
