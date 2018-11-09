@@ -6,7 +6,7 @@ public class ResultUtility {
 
     private boolean status;  //是否成功
     private String msg;        //返回提示的消息
-    private String code;      // 主要返回的数据
+    private Object code;      // 主要返回的数据
 
 
     public ResultUtility()
@@ -18,7 +18,7 @@ public class ResultUtility {
         this.msg = msg;
 
     }
-    public ResultUtility(boolean status, String msg, String code) {
+    public ResultUtility(boolean status, String msg, Object code) {
         this.status = status;
         this.msg = msg;
         this.code = code;
@@ -40,11 +40,11 @@ public class ResultUtility {
         this.msg = msg;
     }
 
-    public String getCode() {
+    public Object getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Object code) {
         this.code = code;
     }
 

@@ -1,7 +1,7 @@
 package com.example.bmp.controller;
 import com.example.bmp.entity.Customer;
 import com.example.bmp.model.ResultUtility;
-import com.example.bmp.service.customerService;
+import com.example.bmp.service.CustomerService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class InterfaceCustomer {
     @Autowired
-    private customerService customerService;
+    private CustomerService customerService;
     @RequestMapping("/save")
     public String saveCustomer(
             @RequestParam("openid" )String openid,
@@ -20,7 +20,7 @@ public class InterfaceCustomer {
     )
     {
         ResultUtility resultUtilityn;
-        Customer open=customerService.findOpenid (openid);//查询opendid
+        Customer open= customerService.findOpenid (openid);//查询opendid
         if (open != null)
         {
             resultUtilityn=new ResultUtility (false,"你已经领取过了");
