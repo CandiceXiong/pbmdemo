@@ -1,5 +1,4 @@
 package com.example.bmp.controller;
-
 import com.example.bmp.entity.Customer;
 import com.example.bmp.model.ResultUtility;
 import com.example.bmp.service.CustomerService;
@@ -18,7 +17,7 @@ public class CustomerController {
     @RequestMapping("/index")
    public String customer(Model model)
     {
-        List<Customer> customers=customerService.findAll ();
+        List<Customer> customers=customerService.getCustomerList ();
         model.addAttribute ("customer",customers);
         return "index";
     }

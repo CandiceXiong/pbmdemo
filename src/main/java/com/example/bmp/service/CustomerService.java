@@ -14,7 +14,7 @@ public class CustomerService {
     private CustomerDao customerDao;
 
     //获取数据
-     public List<Customer> findAll()
+     public List<Customer> getCustomerList()
      {
          List<Customer> all=customerDao.findAll ();
          return  all;

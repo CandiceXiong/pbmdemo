@@ -12,8 +12,8 @@ import java.util.List;
 @Repository  //用于标注数据访问组件，即DAO组件,持久层
 public interface CustomerDao extends JpaRepository<Customer,Integer> {
 
-    //获取用户信息
-    List<Customer> findAll();
+
+
     //保存全部数据
     Customer save(Customer customer);
     //查询第一条数据
@@ -24,7 +24,7 @@ public interface CustomerDao extends JpaRepository<Customer,Integer> {
    @Transactional   //事物
    @Modifying(clearAutomatically = true)
    @Query(value = "update Customer set status=1,updatetime=sysdate(),openid=?2 where code=?1 ",nativeQuery = true)
-   public  void updateByCode(String code,String openid);
+   public void updateByCode(String code,String openid);
 
     //分页
     //根据code,opneid进行模糊查询
