@@ -7,10 +7,13 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository  //用于标注数据访问组件，即DAO组件,持久层
 public interface CustomerDao extends JpaRepository<Customer,Integer> {
 
+    //获取用户信息
+    List<Customer> findAll();
     //保存全部数据
     Customer save(Customer customer);
     //查询第一条数据

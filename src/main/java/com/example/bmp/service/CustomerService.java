@@ -3,13 +3,8 @@ package com.example.bmp.service;
 import com.example.bmp.dao.CustomerDao;
 import com.example.bmp.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
-
-import java.awt.print.Pageable;
 import java.util.List;
 
 @Service        //作用于业务逻辑层
@@ -17,6 +12,13 @@ import java.util.List;
 public class CustomerService {
     @Autowired
     private CustomerDao customerDao;
+
+    //获取数据
+     public List<Customer> findAll()
+     {
+         List<Customer> all=customerDao.findAll ();
+         return  all;
+     }
     //保存所以数据
     public Customer saveCustomer(Customer customer)
     {
