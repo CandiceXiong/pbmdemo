@@ -18,7 +18,7 @@ public class CustomerController {
    public String customer(Model model)
     {
         List<Customer> customers=customerService.getCustomerList ();
-        model.addAttribute ("customer",customers);
+        model.addAttribute ("s",customers);
         return "index";
     }
 

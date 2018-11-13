@@ -8,14 +8,14 @@
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
     <title>首页</title>
     <!-- 网站图标-->
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" th:href="@{../images/favicon.ico}" type="image/x-icon">
     <!-- bootstrap.min.css-->
-    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{../plugins/bootstrap/css/bootstrap.min.css}">
     <!--food-->
-    <link rel="stylesheet" href="../plugins/footable-bootstrap/css/footable.bootstrap.min.css">
-    <link rel="stylesheet" href="../plugins/footable-bootstrap/css/footable.standalone.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/color_skins.css">
+    <link rel="stylesheet" th:href="@{../plugins/footable-bootstrap/css/footable.bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{../plugins/footable-bootstrap/css/footable.standalone.min.css}">
+    <link rel="stylesheet" th:href="@{../css/main.css}">
+    <link rel="stylesheet" th:href="@{../css/color_skins.css}">
 </head>
 <!--紫色主题-->
 <body class="theme-purple">
@@ -148,7 +148,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="Customer :${customer}">
+                            <tr th:each="Customer :${s}">
                                 <td th:text="${Customer.id}"></td>
                                 <td th:text="${Customer.openid}"></td>
                                 <td th:text="${Customer.answer1}"></td>
@@ -168,12 +168,12 @@
 </section>
 <!-- Jquery 核心 Js -->
 <!-- 脚本插件 Js -->
-<script src="../bundles/libscripts.bundle.js"></script>
-<script src="../bundles/vendorscripts.bundle.js"></script>
-<script src="../bundles/mainscripts.bundle.js"></script>
-<script src="../bundles/footable.bundle.js"></script>
-<script src="../js/pages/tables/footable.js"></script>
+<script th:src="@{../bundles/libscripts.bundle.js}"></script>
+<script th:src="@{../bundles/vendorscripts.bundle.js}"></script>
+<script th:src="@{../bundles/mainscripts.bundle.js}"></script>
+<script th:src="@{../bundles/footable.bundle.js}"></script>
+<script th:src="@{../js/pages/tables/footable.js}"></script>
 </body>
 </html>
-</body>
+
 </html>
