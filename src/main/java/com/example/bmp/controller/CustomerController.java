@@ -7,11 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
-
-
 @Controller
 public class CustomerController {
-
     @Autowired
     private CustomerService customerService;
     @RequestMapping("/index")
@@ -21,7 +18,6 @@ public class CustomerController {
         model.addAttribute ("s",customers);
         return "index";
     }
-
     @RequestMapping("add")
     public String addCustomer(Customer customer) {
         ResultUtility resultUtility = new ResultUtility ();
