@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
-
-
 @Controller
-
 public class UserController {
     @Autowired
     private UserService userService;
@@ -42,16 +39,14 @@ public class UserController {
     /**
      * 去登录页面
      */
-    @RequestMapping("/login")
+    @RequestMapping("login")
     public String login() {
         return "login";
     }
-
     /**
      * 执行登录
      */
-
-    @RequestMapping("/loginuser")
+    @RequestMapping("loginuser")
     public String login(HttpServletRequest request) {
         String username = request.getParameter ("username");
         String password = request.getParameter ("password");
