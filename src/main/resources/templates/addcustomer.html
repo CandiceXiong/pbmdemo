@@ -34,7 +34,7 @@
         <li>
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html"><img src="../images/logo.svg" width="30" alt="Oreo"><span class="m-l-10">admin</span></a>
+                <a class="navbar-brand" href="../static/index.html"><img src="../images/logo.svg" width="30" alt="Oreo"><span class="m-l-10">admin</span></a>
             </div>
         </li>
         <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>
@@ -68,7 +68,7 @@
             <div class="menu">
                 <ul class="list">
                     <div class="user-info">
-                        <div class="image"><a href="index.html">
+                        <div class="image"><a href="../static/index.html">
                             <img src="../images/ecommerce/1.png" alt="User"></a></div>
                     </div>
                     </li>
@@ -76,9 +76,9 @@
                     <li class="active open"> <a href="javascript:void(0);" class="menu-toggle">
                         <i class="zmdi zmdi-home"></i><span>用户管理</span></a>
                         <ul class="ml-menu">
-                            <li><a href="index.html" th:href="@{index.html}">查看用户</a></li>
-                            <li><a href="updatecustomer.html" th:href="@{updatecustomer.html}">修改用户</a></li>
-                            <li><a href="addcustomer.html" th:href="@{addcustomer.html}">添加用户</a></li>
+                            <li><a  th:href="@{list}">查看用户</a></li>
+                            <li><a  th:href="@{edit}">修改用户</a></li>
+                            <li><a  th:href="@{add}">添加用户</a></li>
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-copy"></i><span>文章管理</span> </a>
@@ -113,7 +113,7 @@
             </div>
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
+                    <li class="breadcrumb-item"><a href="../static/index.html"><i class="zmdi zmdi-home"></i> Oreo</a></li>
                     <li class="breadcrumb-item"><a href="javascript:void(0);">Tables</a></li>
                     <li class="breadcrumb-item active">Jquery DataTables</li>
                 </ul>
@@ -142,26 +142,29 @@
                     </ul>
                 </div>
                 <div class="body">
-                    <form id="form_validation" method="POST">
+                    <form class="form-horizontal"   th:action="@{/add}"  method="post">
                         <div class="form-group form-float">
-                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                            <input type="text" class="form-control" placeholder="openid" name="name" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="text" class="form-control" placeholder="Surname" name="surname" required>
+                            <input type="text" class="form-control" placeholder="问题一" name="surname" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                            <input type="text" class="form-control" placeholder="问题二" name="email" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="password" class="form-control" placeholder="Password" name="password" required>
+                            <input type="password" class="form-control" placeholder="code" name="password" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-float">
+                            <input type="password" class="form-control" placeholder="状态" name="password" required>
+                        </div>
+                        <!--<div class="form-group">
                             <div class="checkbox">
                                 <input id="checkbox" type="checkbox">
                                 <label for="checkbox">I have read and accept the terms</label>
                             </div>
-                        </div>
-                        <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit">SUBMIT</button>
+                        </div>-->
+                        <input class="btn btn-raised btn-primary btn-round waves-effect" th:value="Submit" type="submit">提交</input>
                     </form>
                 </div>
             </div>
@@ -173,8 +176,7 @@
 <script src="../bundles/libscripts.bundle.js"></script>
 <script src="../bundles/vendorscripts.bundle.js"></script>
 <script src="../bundles/mainscripts.bundle.js"></script>
-<script src="../bundles/footable.bundle.js"></script>
-<script src="../js/pages/tables/footable.js"></script>
+
 
 
 </body>
