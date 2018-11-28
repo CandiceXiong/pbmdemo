@@ -5,7 +5,6 @@ import com.example.bmp.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,19 +17,7 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
-    @RequestMapping("/likecode/{code}")
-    public List<Customer>findBycode(@PathVariable(value = "code") String code)
-    {
-        return customerService.findBycode (code);
-    }
-    @RequestMapping("/cando/{code}")
-    public List<Customer>findopenidAndcode(
-            @PathVariable(value = "code") String code,
-            @PathVariable("openid") String openid
-            )
-    {
-        return customerService.findByopenidAndcode (code,openid);
-    }
+
     @RequestMapping("/list")
    public String customer(Model model)
     {
@@ -59,19 +46,19 @@ public class CustomerController {
     @RequestMapping("/toEdit")
     public String toEdit(Model model,Integer id) {
         Customer customer=customerService.findCusById (id);
-        model.addAttribute("Customer", customer);
+        model.addAttribute("Customer", customer);  //带上数据Customer，其值是customer
         return "updatecustomer";
     }
 
     @RequestMapping("/edit")
     public String edit(Customer customer) {
         customerService.editCustomer (customer);
-        return "list ";
+        return "index ";
     }
 
     /**
      * 删除
-     * */
+     **/
     @RequestMapping("/delete")
     public String delete(Integer id) {
         ResultUtility resultUtility=new ResultUtility ();

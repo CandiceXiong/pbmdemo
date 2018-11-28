@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/color_skins.css">
 </head>
-
-
 <!--紫色主题-->
 <body class="theme-purple">
 <!-- 页面加载-->
@@ -29,7 +27,6 @@
     </div>
 </div>
 <!-- Overlay For Sidebars 覆盖的边栏 -->
-
 <!--导航条-->
 <nav class="navbar p-l-5 p-r-5">
     <ul class="nav navbar-nav navbar-left">
@@ -172,7 +169,8 @@
                                 记住我
                             </label>
                         </div>
-                        <input type="button" th:value="提交" class="btn btn-raised btn-primary btn-round waves-effect"></input>
+                        <input type="submit" th:value="提交"  class="btn btn-raised btn-primary btn-round waves-effect" />
+
                         <a href="/toadd" th:href="@{/list}" class="btn btn-raised btn-primary btn-round waves-effect" >返回</a>
                     </form>
                 </div>

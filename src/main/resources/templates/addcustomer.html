@@ -144,19 +144,19 @@
                 <div class="body">
                     <form class="form-horizontal"   th:action="@{/add}"  method="post">
                         <div class="form-group form-float">
-                            <input type="text" class="form-control" placeholder="openid" name="name" required>
+                            <input type="text" class="form-control" id="openid" placeholder="openid" name="openid" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="text" class="form-control" placeholder="问题一" name="surname" required>
+                            <input type="text" class="form-control" id="answer1" placeholder="问题一" name="answer1" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="text" class="form-control" placeholder="问题二" name="email" required>
+                            <input type="text" class="form-control" id="answer2" placeholder="问题二" name="answer2" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="password" class="form-control" placeholder="code" name="password" required>
+                            <input type="text" class="form-control" id="code" placeholder="code" name="code" required>
                         </div>
                         <div class="form-group form-float">
-                            <input type="password" class="form-control" placeholder="状态" name="password" required>
+                            <input type="text" class="form-control" id="status" placeholder="状态" name="status" required>
                         </div>
                         <!--<div class="form-group">
                             <div class="checkbox">
@@ -164,7 +164,9 @@
                                 <label for="checkbox">I have read and accept the terms</label>
                             </div>
                         </div>-->
-                        <input class="btn btn-raised btn-primary btn-round waves-effect" th:value="Submit" type="submit">提交</input>
+                        <input class="btn btn-raised btn-primary btn-round waves-effect" th:value="Submit" type="submit"></input>
+                        &nbsp; &nbsp; &nbsp;
+                        <input type="reset" value="Reset" class="btn btn-raised btn-primary btn-round waves-effect" />
                     </form>
                 </div>
             </div>
